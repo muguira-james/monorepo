@@ -17,5 +17,5 @@ jobs:
       - name: Install Dependencies
         run: |
           sudo apt-get update
-          npm ci
+          npm install -y
           npm test

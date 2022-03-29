@@ -16,6 +16,6 @@ jobs:
           node-version: ${{ matrix.verion }}
       - name: Install Dependencies
         run: |
-          sudo apt-get update
+          cd fend
           npm install -y
           npm test

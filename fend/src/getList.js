@@ -6,8 +6,4 @@ export function getList() {
             return data.json();
             
         })
-        // .then(data => {
-        //     console.log("data ->", data);
-        //     return data;
-        // })
 }

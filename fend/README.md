@@ -8,3 +8,5 @@ The API provides an array of golfers first and last names, their location on the
 The code uses a react effect hook to do the fetch. Once the effect hook runs it places the array it retrieved from the API into a simple array. That array is shown in an HTML table.
 
 The test is REALLY simple: it just checks to see if a string is present in the output page.
+
+test

@@ -17,5 +17,5 @@ jobs:
       - name: Install Dependencies
         run: |
           cd fend
-          npm install -y
+          npm ci
           npm test

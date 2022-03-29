@@ -1,0 +1,21 @@
+
+on: 
+  push:
+    branches: 
+      - main
+    paths:
+      - "fend/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with: 
+          node-version: ${{ matrix.verion }}
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          npm ci
+          npm test

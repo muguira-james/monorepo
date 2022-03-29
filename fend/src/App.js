@@ -1,7 +1,10 @@
 
 import React, { useState, useEffect } from 'react';
 
+// a little styling just to move the displayed array over 20 pixels.
 import './App.css';
+
+// getlist contains the fetch call to the API
 import { getList } from './getList.js'
 
 function App() {
@@ -18,7 +21,7 @@ function App() {
     return () => mounted = false;
   }, []);
 
-  console.log("list==== ", list)
+  // console.log("list==== ", list)
   return (
     <div className="wrapper">
       <table>

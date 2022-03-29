@@ -1,10 +1,14 @@
 
+// bring in requires library and services. In this case express and CORS
 const express = require('express');
 const cors = require('cors');
 
+// establish app as an express server
 let app = express();
+// suggest a port
 let port = 3333;
 
+// hard code the player information for now.
 const players = {
     "graph": [
         { "FirstName": "Joan", "LastName": "Jet", "ID": 1, "Hole": 1, "HoleLocation": "TEE" },
@@ -22,23 +26,28 @@ const players = {
     ]
 };
 
+// get cross-origin resource sharing working so the browaser will not complain
 app.use(cors());
 
+// our 2 API
+// /graph returns the array of players and an http status code
 app.get('/graph', (req, resp) => {
     console.log("/graph/players...", players.graph.length);
     resp.setHeader('Content-Type', 'application/json');
     resp.send(JSON.stringify(players.graph));
 })
 
+// the top level API 
 app.get('/', (request, response) => {
     console.log("/...")
     response.setHeader('Content-Type', 'text/html');
     response.send("<div>Hello there, welcome</div>")
 })
 
-
+// start the server
 app.listen(port, () => {
     console.log(`app listening on port ${port}`)
 })
 
+// we need this line to expose the "app" to the testing frame work.
 module.exports = app;
